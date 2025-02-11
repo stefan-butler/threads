@@ -70,7 +70,8 @@ async function findPrevResponse(textInput) {
         input: line,
       });
 
-      const answerEmbedding = response.data[0].embedding;
+      // const answerEmbedding = response.data[0].embedding; - OLD LINE
+      const answerEmbedding = answerLine.data[0].embedding;
       const answerSimilarity = cosineSimilarity(inputEmbedding, answerEmbedding);
 
       if (answerSimilarity > highestSimilarity) {
